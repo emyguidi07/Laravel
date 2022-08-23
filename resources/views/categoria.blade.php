@@ -1,7 +1,7 @@
 @extends('template.default')
     @section('content')
     <section>
-        <h1>Categoria</h1>
+        <h1 class="titulo">Categoria</h1>
     </section>
 
     @endsection
