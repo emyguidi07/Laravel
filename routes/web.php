@@ -40,3 +40,5 @@ Route::get('/categoria','CategoriaController@index');
 Route::get('/pedido','PedidoController@index');
 Route::get('/produto','ProdutoController@index');
 Route::get('/cliente','ClienteController@index');
+
+Route::post('/contato/inserir','App\Http\Controllers\ContatoController@store');

@@ -86,4 +86,12 @@ nav ul li a:hover{
 	text-align: center;
 	width: 50%;
 }
+.space{
+	margin-left: 40px;
+	background-color: #2a056ee3;
+	padding: 5px;
+	border-radius: 10px;
+	width: 20%;
+	color: #fff;
+}
 

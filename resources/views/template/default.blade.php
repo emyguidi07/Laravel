@@ -23,8 +23,6 @@
 </div>
     <!--- yield  é aproveitada -->
     @yield('content')
-
-    <img src="{!! asset('img/fundo.png')!!}" class="image"/>
     <footer class="footer">
         <p>@Todos os direitos reservados -2022</p>
     </footer>
