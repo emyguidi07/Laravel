@@ -2,23 +2,72 @@
     @section('content')
     <section>
         <h1 class="titulo">Cliente</h1>
-        @foreach($cliente as $pe)
-        <h1> {{$pe->idCliente}} </h1>
-        <p> {{$pe->nome}} </p>
-        <p> {{$pe->dataNasc}} </p>
-        <p> {{$pe->genero}} </p>
-        <p> {{$pe->estadoCivil}} </p>
-        <p> {{$pe->endereco}} </p>
-        <p> {{$pe->numero}} </p>
-        <p> {{$pe->complemento}} </p>
-        <p> {{$pe->cep}} </p>
-        <p> {{$pe->bairro}} </p>
-        <p> {{$pe->cidade}} </p>
-        <p> {{$pe->rg}} </p>
-        <p> {{$pe->telefone}} </p>
-        <p> {{$pe->email}} </p>
-        <p> {{$pe->celular}} </p>
-        @endforeach
+        <div>
+            <form>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Nome" name="txNome" value="Insira seu nome"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Data de nascimento - escreva em XXXX-XX-XX" name="txData" value="Insira sua data de nasc"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Gênero" name="txGen" value="Insira seu gênero"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="textarea" placeholder="Endereço" name="txEnd" value="Insira seu endereço"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="number" placeholder="Número" name="txNum" value="Insira seu número"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Complemento" name="txCom" value="Insira seu complemento"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="number" placeholder="CEP" name="txCEP" value="Insira seu CEP"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Bairro" name="txBai" value="Insira seu bairro"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Cidade" name="txCid" value="Insira cidade"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="RG" name="txRG" value="Insira seu RG"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Telefone" name="txTel" value="Insira seu telefone"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="email" placeholder="Email" name="txEmail" value="Insira seu email"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Celular" name="txCel" value="Insira seu celular"/>
+        </div>
+        <div class="espaco">
+            <input class="btn btn-danger" type="submit" value="Salvar"/>
+        </div>
+
+            </form>
+        </div>
+        <div class="space">
+                @foreach($cliente as $pe)
+                <h1> IdCliente: {{$pe->idCliente}} </h1>
+                <p> Nome: {{$pe->nome}} </p>
+                <p> Data de Nascimento: {{$pe->dataNasc}} </p>
+                <p> Gênero:{{$pe->genero}} </p>
+                <p> Estado Civil: {{$pe->estadoCivil}} </p>
+                <p> Endereço: {{$pe->endereco}} </p>
+                <p> Número: {{$pe->numero}} </p>
+                <p> Complemento: {{$pe->complemento}} </p>
+                <p> CEP: {{$pe->cep}} </p>
+                <p> Bairro:{{$pe->bairro}} </p>
+                <p> Cidade: {{$pe->cidade}} </p>
+                <p> RG: {{$pe->rg}} </p>
+                <p> Telefone: {{$pe->telefone}} </p>
+                <p> Email: {{$pe->email}} </p>
+                <p> Celular: {{$pe->celular}} </p>
+                @endforeach
+        </div>
     </section>
 
     @endsection

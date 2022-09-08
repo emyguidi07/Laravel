@@ -2,11 +2,30 @@
     @section('content')
     <section>
         <h1 class="titulo">Produto</h1>
-        @foreach($produto as $p)
-        <h1> {{$p->idProduto}} </h1>
-        <p> {{$p->idCategoria}} </p>
-        <p> {{$p->produto}} </p>
-        <p> {{$p->valor}} </p>
-        @endforeach
+        <div>
+            <form>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Produto" name="txProduto" value="Insira um"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="IdCategoria" name="txIdCategoria" value="Insira o ID da categoria"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Valor" name="txValor" value="Insira o valor"/>
+        </div>
+        <div class="espaco">
+            <input class="btn btn-danger" type="submit" value="Salvar"/>
+        </div>
+
+            </form>
+        </div>
+        <div class="space">
+            @foreach($produto as $p)
+            <h1> IdProduto: {{$p->idProduto}} </h1>
+            <p> IdCategoria: {{$p->idCategoria}} </p>
+            <p> Produto: {{$p->produto}} </p>
+            <p> Valor: {{$p->valor}} </p>
+            @endforeach
+        </div>
     </section>
     @endsection
