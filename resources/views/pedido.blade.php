@@ -26,7 +26,7 @@
             <input class="btn btn-danger" type="submit" value="Salvar"/>
         </div>
 
-            </form>
+        </form>
         </div>
        
         <div class="space">
@@ -39,7 +39,7 @@
             <p> Data de saída:  {{$pe->data_saida}} </p>
             <p> Valor total: {{$pe->valortotal}} </p>
         @endforeach
-    <div class="space">
+        </div>
     </section>
 
     @endsection
