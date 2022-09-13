@@ -37,7 +37,14 @@ class ContatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contato = new ContatoModel();
+        $contato -> nome = $request->txNome;
+        $contato -> email = $request->txEmail;
+        $contato -> fone = $request->txTel;
+        $contato -> assunto = $request->txAssunto;
+        $contato -> mensagem = $request->txMsg;
+        $contato -> save();
+        return redirect("/contato");
     }
 
     /**

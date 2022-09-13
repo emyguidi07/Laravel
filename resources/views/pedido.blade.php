@@ -3,7 +3,8 @@
     <section>
     <h1 class="titulo">Pedido</h1>
     <div>
-            <form>
+        <form action="{{url('/pedido/inserir')}}" method="post">
+        {{csrf_field()}} 
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="IdCategoria" name="txIdcategoria" value="Insira o ID da categoria"/>
         </div>
@@ -12,6 +13,10 @@
         </div>
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="IdProduto" name="txIdproduto" value="Insira o ID do produto"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Produto" name="txIdcliente" value="Insira o ID do cliente"/>
+        </div>
         </div>
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="Data de saída - escreva em XXXX-XX-XX" name="txDatas" value="Insira a data de saída"/>

@@ -37,7 +37,16 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pedido = new PedidoModel();
+        $pedido -> idCategoria = $request->txIdcategoria;
+        $pedido -> idProduto = $request->txIdproduto;
+        $pedido -> idCliente = $request->txIdcliente;
+        $pedido -> data_entrega = $request->txDatae;
+        $pedido -> data_saida = $request->txDatas;
+        $pedido -> qtd_produto = $request->txQtd;
+        $pedido -> valortotal = $request->txValor;
+        $pedido -> save();
+        return redirect("/pedido");
     }
 
     /**

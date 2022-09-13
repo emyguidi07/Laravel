@@ -41,4 +41,8 @@ Route::get('/pedido','PedidoController@index');
 Route::get('/produto','ProdutoController@index');
 Route::get('/cliente','ClienteController@index');
 
-Route::post('/contato/inserir','App\Http\Controllers\ContatoController@store');
+Route::post('/contato/inserir','ContatoController@store');
+Route::post('/cliente/inserir','ClienteController@store');
+Route::post('/pedido/inserir','PedidoController@store');
+Route::post('/produto/inserir','ProdutoController@store');
+Route::post('/categoria/inserir','CategoriaController@store');

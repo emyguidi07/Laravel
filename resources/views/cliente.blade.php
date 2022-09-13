@@ -3,12 +3,16 @@
     <section>
         <h1 class="titulo">Cliente</h1>
         <div>
-            <form>
+        <form action="{{url('/cliente/inserir')}}" method="post">
+        {{csrf_field()}}  
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="Nome" name="txNome" value="Insira seu nome"/>
         </div>
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="Data de nascimento - escreva em XXXX-XX-XX" name="txData" value="Insira sua data de nasc"/>
+        </div>
+        <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Estado civil" name="txEst" value="Insira seu estado civil"/>
         </div>
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="Gênero" name="txGen" value="Insira seu gênero"/>
@@ -29,7 +33,7 @@
             <input  class="form-control" type="text" placeholder="Bairro" name="txBai" value="Insira seu bairro"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Cidade" name="txCid" value="Insira cidade"/>
+            <input  class="form-control" type="text" placeholder="Cidade" name="txCid" value="Insira sua cidade"/>
         </div>
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="RG" name="txRG" value="Insira seu RG"/>

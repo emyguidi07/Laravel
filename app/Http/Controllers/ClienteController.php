@@ -25,7 +25,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**
@@ -36,7 +36,24 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cliente = new ClienteModel();
+        $cliente -> nome = $request->txNome;
+        $cliente -> dataNasc = $request->txData;
+        $cliente -> genero = $request->txGen;
+        $cliente -> estadoCivil = $request->txEst;
+        $cliente -> endereco = $request->txEnd;
+        $cliente -> numero = $request->txNum;
+        $cliente -> complemento = $request->txCom;
+        $cliente -> cep = $request->txCEP;
+        $cliente -> bairro = $request->txBai;
+        $cliente -> cidade = $request->txCid;
+        $cliente -> cpf = $request->txCPF;
+        $cliente -> rg = $request->txRG;
+        $cliente -> telefone = $request->txTel;
+        $cliente -> celular = $request->txCel;
+        $cliente -> email = $request->txEmail;
+        $cliente -> save();
+        return redirect("/cliente");
     }
 
     /**

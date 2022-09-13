@@ -3,7 +3,8 @@
     <section>
         <h1 class="titulo">Categoria</h1>
         <div>
-            <form>
+        <form action="{{url('/categoria/inserir')}}" method="post">
+        {{csrf_field()}} 
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="Categoria" name="txCategoria" value="Insira uma categoria"/>
         </div>
