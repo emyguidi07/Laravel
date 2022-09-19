@@ -12,6 +12,7 @@
     <div>
         <nav>
             <ul>
+                <img src="{!! asset('img/laravel.png')!!}" class="image_menu"/>
                 <li><a href= "/"><li>Home</li></a>
                 <li><a href= "/contato"><li>Contato</li></a>
                 <li><a href= "/categoria"><li>Categoria</li></a>
