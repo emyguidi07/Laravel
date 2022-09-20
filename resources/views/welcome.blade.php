@@ -2,7 +2,8 @@
     @section('content')
     <section>
         <h1 class="titulo">Home </h1>
-        <img src="{!! asset('img/fundo.png')!!}" class="image"/>
+        <div class= "fundo-image">
+    </div>
     </section>
 
     @endsection

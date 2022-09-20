@@ -34,8 +34,9 @@
         </form>
         </div>
        
-        <div class="space">
+        
             @foreach($pedido as $pe)
+            <div class="space">
             <h1> IdPedido: {{$pe->idPedido}} </h1>
             <p> IdCategoria:{{$pe->idCategoria}} </p>
             <p> Quantidade de produtos: {{$pe->qtd_produto}} </p>
@@ -43,8 +44,9 @@
             <p> Data de entrega: {{$pe->data_entrega}} </p>
             <p> Data de saída:  {{$pe->data_saida}} </p>
             <p> Valor total: {{$pe->valortotal}} </p>
+            </div>
         @endforeach
-        </div>
+        
     </section>
 
     @endsection

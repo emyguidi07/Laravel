@@ -35,6 +35,15 @@ Route::get('/categoria', function () {
     return view('categoria'); //nome da view
 });
 
+
+
+Route::get('/contatoadm', function () {
+    return view('contatoadm'); //nome da view
+});
+
+
+
+
 Route::get('/contato','ContatoController@index');
 Route::get('/categoria','CategoriaController@index');
 Route::get('/pedido','PedidoController@index');

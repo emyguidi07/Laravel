@@ -15,12 +15,14 @@
 
             </form>
         </div>
-        <div class="space">
+        
             @foreach($categoria as $cat)
+            <div class="space">
             <h1> Id Categoria: {{$cat->idCategoria}} </h1>
             <p> Categoria: {{$cat->categoria}} </p>
+            </div>
             @endforeach
-        </div>
+        
     </section>
 
     @endsection

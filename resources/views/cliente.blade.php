@@ -53,8 +53,9 @@
 
             </form>
         </div>
-        <div class="space">
+        
                 @foreach($cliente as $pe)
+                <div class="space">
                 <h1> IdCliente: {{$pe->idCliente}} </h1>
                 <p> Nome: {{$pe->nome}} </p>
                 <p> Data de Nascimento: {{$pe->dataNasc}} </p>
@@ -70,8 +71,9 @@
                 <p> Telefone: {{$pe->telefone}} </p>
                 <p> Email: {{$pe->email}} </p>
                 <p> Celular: {{$pe->celular}} </p>
+                </div>
                 @endforeach
-        </div>
+        
     </section>
 
     @endsection

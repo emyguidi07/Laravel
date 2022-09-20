@@ -21,15 +21,15 @@
 
             </form>
         </div>
-        <div class="space">
+        
             @foreach($produto as $p)
-
+            <div class="space">
             <h1> IdProduto: {{$p->idProduto}} </h1>
             <p> IdCategoria: {{$p->idCategoria}} </p>
             <p> Produto: {{$p->produto}} </p>
             <p> Valor: {{$p->valor}} </p>
+            </div>
             @endforeach
         
-        </div>
     </section>
     @endsection

@@ -102,9 +102,18 @@ nav ul li a:hover{
 	border-radius: 10px;
 	width: 20%;
 	color: #fff;
-	margin-bottom: 5%;
+	margin-bottom: 2%;
 }
 .flexbox{
+	margin-bottom: 2%;
+}
+.fundo-image{
+	background: url('https://www.hostinger.com.br/tutoriais/wp-content/uploads/sites/12/2021/01/O-Que-e-e-commerce-Todos-os-Detalhes-Como-Comecar-o-seu.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
 	margin-bottom: 2%;
 }
 
