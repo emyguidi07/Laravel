@@ -98,6 +98,7 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ClienteModel::where('idCliente',$id)->delete();
+        return redirect("/cliente");
     }
 }

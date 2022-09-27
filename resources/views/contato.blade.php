@@ -26,7 +26,18 @@
 
             </form>
         </div>
-        
+   
+        @foreach($contato as $c)
+            <div class="space">
+            <h1> Id : {{$c->idContato}} </h1>
+            <p> Nome: {{$c->nome}} </p>
+            <p> Email: {{$c->email}} </p>
+            <p> Telefone:{{$c->fone}} </p>
+            <p> Assunto: {{$c->assunto}} </p>
+            <p> Mensagem: {{$c->mensagem}} </p>
+            <a href="/contato/{{$c->idContato}}" class="link"><span class="material-symbols-outlined">delete</span></a>​
+            </div>
+            @endforeach
     </section>
 
     @endsection

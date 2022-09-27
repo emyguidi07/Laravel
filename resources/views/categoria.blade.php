@@ -20,6 +20,7 @@
             <div class="space">
             <h1> Id Categoria: {{$cat->idCategoria}} </h1>
             <p> Categoria: {{$cat->categoria}} </p>
+            <a href="/categoria/{{$cat->idCategoria}}" class="link"><span class="material-symbols-outlined">delete</span></a>
             </div>
             @endforeach
         

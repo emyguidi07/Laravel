@@ -43,15 +43,23 @@ Route::get('/contatoadm', function () {
 
 
 
-
+//consultas
 Route::get('/contato','ContatoController@index');
 Route::get('/categoria','CategoriaController@index');
 Route::get('/pedido','PedidoController@index');
 Route::get('/produto','ProdutoController@index');
 Route::get('/cliente','ClienteController@index');
 
+//inserções
 Route::post('/contato/inserir','ContatoController@store');
 Route::post('/cliente/inserir','ClienteController@store');
 Route::post('/pedido/inserir','PedidoController@store');
 Route::post('/produto/inserir','ProdutoController@store');
 Route::post('/categoria/inserir','CategoriaController@store');
+
+//exclusões
+Route::get('/contato/{id}','ContatoController@destroy'); //precisa ter id para n apagar tudo
+Route::get('/cliente/{id}','ClienteController@destroy');
+Route::get('/pedido/{id}','PedidoController@destroy');
+Route::get('/produto/{id}','ProdutoController@destroy');
+Route::get('/categoria/{id}','CategoriaController@destroy');

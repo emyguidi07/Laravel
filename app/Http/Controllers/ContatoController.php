@@ -89,6 +89,7 @@ class ContatoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ContatoModel::where('idContato',$id)->delete();
+        return redirect("/contato");
     }
 }

@@ -87,6 +87,7 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ProdutoModel::where('idProduto',$id)->delete();
+        return redirect("/produto");
     }
 }

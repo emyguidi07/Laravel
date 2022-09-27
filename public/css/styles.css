@@ -116,4 +116,11 @@ nav ul li a:hover{
     width: 100%;
 	margin-bottom: 2%;
 }
+.link {
+	text-decoration: none;
+	color: #fff;
+}
+.link:hover{
+	color: rgb(193, 147, 245);
+}
 
