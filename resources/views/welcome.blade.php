@@ -5,5 +5,6 @@
         <div class= "fundo-image">
     </div>
     </section>
-
+    <section>
+        
     @endsection
