@@ -61,6 +61,7 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
+        //BURRINHA VC HEIN
         $categoria = CategoriaModel::find($id);
         $title = "Editar Categoria - {$categoria->categoria}";
         return view('categoriaEditar', compact('title', 'categoria'));
