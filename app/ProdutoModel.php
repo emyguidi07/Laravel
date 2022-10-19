@@ -9,4 +9,5 @@ class ProdutoModel extends Model
     protected $table = "tbProduto";
     protected $fillable = ['idProduto','produto','idCategoria','valor'];
     public $timestamps = false;
+    protected $primaryKey = 'idProduto';
 }
