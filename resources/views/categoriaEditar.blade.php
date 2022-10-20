@@ -1,7 +1,7 @@
 @extends('template.default')
     @section('content')
     <section>
-        <h1 class="titulo">Categoria</h1>
+        <h1 class="titulo">Categoria edição</h1>
         <div>
         <form action="{{url('/categoriaEditar/editar')}}" method="post">
         {{csrf_field()}} 

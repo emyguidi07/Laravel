@@ -29,6 +29,7 @@
             <p> Produto: {{$p->produto}} </p>
             <p> Valor: {{$p->valor}} </p>
             <a href="/produto/{{$p->idProduto}}" class="link"><span class="material-symbols-outlined">delete</span></a>
+            <a href="/produtoEditar/{{$p->idProduto}}/editar">Editar</a>
             </div>
             @endforeach
         

@@ -64,5 +64,9 @@ Route::get('/pedido/{id}','PedidoController@destroy');
 Route::get('/produto/{id}','ProdutoController@destroy');
 Route::get('/categoria/{id}','CategoriaController@destroy');
 
-//alterações
+//edições
 Route::get('/categoriaEditar/{id}/editar','CategoriaController@edit');
+Route::get('/produtoEditar/{id}/editar','ProdutoController@edit');
+Route::get('/pedidoEditar/{id}/editar','PedidoController@edit');
+Route::get('/clienteEditar/{id}/editar','ClienteController@edit');
+Route::get('/contatoEditar/{id}/editar','ContatoController@edit');

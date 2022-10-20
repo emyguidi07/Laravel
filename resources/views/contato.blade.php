@@ -35,7 +35,8 @@
             <p> Telefone:{{$c->fone}} </p>
             <p> Assunto: {{$c->assunto}} </p>
             <p> Mensagem: {{$c->mensagem}} </p>
-            <a href="/contato/{{$c->idContato}}" class="link"><span class="material-symbols-outlined">delete</span></a>​
+            <a href="/contato/{{$c->idContato}}" class="link"><span class="material-symbols-outlined">delete</span></a>
+            <a href="/contatoEditar/{{$c->idContato}}/editar">Editar</a>
             </div>
             @endforeach
     </section>

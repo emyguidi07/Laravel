@@ -68,7 +68,9 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pedido = PedidoModel::find($id);
+        $title = "Editar Pedido - {$pedido->idProduto}, {$pedido->idCategoria}, {$pedido->idCliente}, {$pedido->data_entrega}, {$pedido->data_saída}, {$pedido->qtd_produto}, {$pedido->valortotal}";
+        return view('pedidoEditar', compact('title', 'pedido'));
     }
 
     /**

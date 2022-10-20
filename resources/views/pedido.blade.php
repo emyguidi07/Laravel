@@ -45,6 +45,7 @@
             <p> Data de saída:  {{$pe->data_saida}} </p>
             <p> Valor total: {{$pe->valortotal}} </p>
             <a href="/pedido/{{$pe->idPedido}}" class="link"><span class="material-symbols-outlined">delete</span></a>
+            <a href="/pedidoEditar/{{$pe->idPedido}}/editar">Editar</a>
             </div>
         @endforeach
         

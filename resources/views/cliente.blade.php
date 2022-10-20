@@ -72,6 +72,7 @@
                 <p> Email: {{$pe->email}} </p>
                 <p> Celular: {{$pe->celular}} </p>
                 <a href="/cliente/{{$pe->idCliente}}" class="link"> <span class="material-symbols-outlined">delete</span></a>
+                <a href="/clienteEditar/{{$pe->idCliente}}/editar">Editar</a>
                 </div>
                 @endforeach
         

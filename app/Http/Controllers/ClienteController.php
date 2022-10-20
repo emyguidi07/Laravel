@@ -75,7 +75,11 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cliente = ClienteModel::find($id);
+        $title = "Editar Cliente - {$cliente->nome}, {$cliente->dataNasc}, {$cliente->genero}, {$cliente->estadoCivil}, 
+        {$cliente->endereco}, {$cliente->numero}, {$cliente->complemento}, {$cliente->cep}, {$cliente->bairro}, 
+        {$cliente->cidade}, {$cliente->cpf}, {$cliente->rg}, {$cliente->telefone}, {$cliente->celular}, {$cliente->email},";
+        return view('clienteEditar', compact('title', 'cliente'));
     }
 
     /**

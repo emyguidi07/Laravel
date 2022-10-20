@@ -66,7 +66,9 @@ class ContatoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contato = ContatoModel::find($id);
+        $title = "Editar Contato - {$contato->nome}, {$contato->email}, {$contato->fone} , {$contato->assunto} , {$contato->mensagem}";
+        return view('contatoEditar', compact('title', 'contato'));
     }
 
     /**
