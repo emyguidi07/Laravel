@@ -82,7 +82,15 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pedido = PedidoModel::find($id);
+        $pedido->update(['idCategoria'=>$request->txIdcategoria]);
+        $pedido->update(['idCliente'=>$request->txIdcliente]);
+        $pedido->update(['idProduto'=>$request->txIdproduto]);
+        $pedido->update(['data_entrega'=>$request->txDatae]);
+        $pedido->update(['data_saida'=>$request->txDatas]);
+        $pedido->update(['qtd_produto'=>$request->txQtd]);
+        $pedido->update(['valortotal'=>$request->txValor]);
+        return redirect("/pedido");
     }
 
     /**

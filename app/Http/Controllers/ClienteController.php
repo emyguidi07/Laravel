@@ -90,8 +90,25 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $cliente = ClienteModel::find($id);
+
+        $cliente->update(['nome'=>$request->txNome]);
+        $cliente->update(['dataNasc'=>$request->txData]);
+        $cliente->update(['genero'=>$request->txGen]);
+        $cliente->update(['estadoCivil'=>$request->txEst]);
+        $cliente->update(['endereco'=>$request->txEnd]);
+        $cliente->update(['numero'=>$request->txNum]);
+        $cliente->update(['complemento'=>$request->txCom]);
+        $cliente->update(['cep'=>$request->txCEP]);
+        $cliente->update(['bairro'=>$request->txBai]);
+        $cliente->update(['cidade'=>$request->txCid]);
+        $cliente->update(['cpf'=>$request->txCPF]);
+        $cliente->update(['rg'=>$request->txRG]);
+        $cliente->update(['telefone'=>$request->txTel]);
+        $cliente->update(['celular'=>$request->txCel]);
+        $cliente->update(['email'=>$request->txEmail]);
+        return redirect("/cliente");
     }
 
     /**

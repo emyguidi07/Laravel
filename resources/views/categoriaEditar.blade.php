@@ -3,7 +3,7 @@
     <section>
         <h1 class="titulo">Categoria edição</h1>
         <div>
-        <form action="{{url('/categoriaEditar/editar')}}" method="post">
+        <form action="{{url('categoria-alterar/'.$categoria->idCategoria)}}" method="post">
         {{csrf_field()}} 
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="Categoria" name="txCategoria" value="{{$categoria->categoria}}"/>

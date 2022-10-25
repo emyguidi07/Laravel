@@ -78,7 +78,11 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produto = ProdutoModel::find($id);
+        $produto->update(['produto'=>$request->txProduto]);
+        $produto->update(['idCategoria'=>$request->txIdCategoria]);
+        $produto->update(['valor'=>$request->txValor]);
+        return redirect("/produto");
     }
 
     /**

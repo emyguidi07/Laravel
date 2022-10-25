@@ -61,7 +61,7 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //BURRINHA VC HEIN
+       
         $categoria = CategoriaModel::find($id);
         $title = "Editar Categoria - {$categoria->categoria}";
         return view('categoriaEditar', compact('title', 'categoria'));
@@ -74,9 +74,11 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id)    
     {
-        //
+       $categoria = CategoriaModel::find($id);
+        $categoria->update(['categoria'=>$request->txCategoria]);
+        return redirect("/categoria");
     }
 
     /**

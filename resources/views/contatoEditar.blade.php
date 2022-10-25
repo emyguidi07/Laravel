@@ -3,7 +3,7 @@
     <section>
     <h1 class="titulo">Contato edição</h1>
         <div>
-        <form action="{{url('/contatoEditar/editar')}}" method="post">
+        <form action="{{url('contato-alterar/'.$contato->idContato)}}" method="post">
         {{csrf_field()}}                
         <div class="espaco">
             <input  class="form-control" type="text" placeholder="Nome" name="txNome" value="{{$contato->nome}}"/>
