@@ -70,3 +70,12 @@ Route::get('/produtoEditar/{id}/editar','ProdutoController@edit');
 Route::get('/pedidoEditar/{id}/editar','PedidoController@edit');
 Route::get('/clienteEditar/{id}/editar','ClienteController@edit');
 Route::get('/contatoEditar/{id}/editar','ContatoController@edit');
+
+//alterações
+Route::post('/contato-alterar/{id}','ContatoController@update');
+Route::post('/produto-alterar/{id}','ProdutoController@update');
+Route::post('/pedido-alterar/{id}','PedidoController@update');
+Route::post('/categoria-alterar/{id}','CategoriaController@update');
+Route::post('/cliente-alterar/{id}','ClienteController@update');
+
+
