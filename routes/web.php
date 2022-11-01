@@ -48,6 +48,9 @@ Route::get('/contato','ContatoController@index');
 Route::get('/categoria','CategoriaController@index');
 Route::get('/pedido','PedidoController@index');
 Route::get('/produto','ProdutoController@index');
+
+Route::get('/produto','ProdutoController@consultaesp');
+
 Route::get('/cliente','ClienteController@index');
 
 //inserções
