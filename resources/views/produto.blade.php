@@ -21,6 +21,20 @@
 
             </form>
         </div>
+
+            <div>
+            <h1 class="titulo">Consultas</h1>
+            <form action="{{url('/produto')}}" method="post">
+            <div class="espaco">
+            <input  class="form-control" type="text" placeholder="Produto" name="txProdutoConsulta" value="Buscar produto"/>
+            </div>
+
+            <div class="espaco">
+            <input class="btn btn-danger" type="submit" value="Buscar"/>
+            </div>
+            </form>
+            
+            </div>
         
             @foreach($produto as $p)
             <div class="space">

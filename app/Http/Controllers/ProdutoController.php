@@ -18,6 +18,13 @@ class ProdutoController extends Controller
         $produto = ProdutoModel::all();
         return view('produto',compact('produto'));
     }
+    
+    public function consultaesp(Request $request)
+    {
+        //consulta por nome
+        $produto = ProdutoModel::where('produto',$request->txProdutoConsulta)->get();
+        return view('produto',compact('produto'));
+    }
 
     /**
      * Show the form for creating a new resource.
