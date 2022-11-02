@@ -37,6 +37,16 @@ nav ul li a:hover{
 	margin-top: 40px;
 	margin-bottom: 30px;
 }
+.subtitle{
+    font-family:Verdana, Tahoma, sans-serif;
+    font-size: 25px;
+	text-decoration: none;
+    font-weight:500;
+    margin-left: 40px;
+    color:#2a056ee3;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
 .espaco{
 	margin-left: 40px;
 	width: 50%;

@@ -15,15 +15,25 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produto = ProdutoModel::all();
-        return view('produto',compact('produto'));
-    }
-    
-    public function consultaesp(Request $request)
-    {
-        //consulta por nome
-        $produto = ProdutoModel::where('produto',$request->txProdutoConsulta)->get();
-        return view('produto',compact('produto'));
+        $searchnome = request('txProdutoConsulta');
+        $searchvalori = request('txProdutoValorI');
+        $searchvalorf = request('txProdutoValorF');
+
+        if($searchvalori && $searchvalorf) {
+            $produto = ProdutoModel::where([$searchvalori.'<'.'valor'.'<'.$searchvalorf])->get();
+        }
+        else{
+            $produto = ProdutoModel::all();
+         }
+
+        if($searchnome) {
+            $produto = ProdutoModel::where(['produto', 'like', '%'.$searchnome.'%'])->get();
+        }
+        else{
+            $produto = ProdutoModel::all();
+         }
+        return view('produto',['produto' => $produto, 'txProdutoConsulta' => $searchnome, 
+        'txProdutoValorI' => $searchvalori, 'txProdutoValorF' => $searchvalorf,]);
     }
 
     /**

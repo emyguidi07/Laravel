@@ -23,19 +23,36 @@
         </div>
 
             <div>
-            <h1 class="titulo">Consultas</h1>
-            <form action="{{url('/produto')}}" method="post">
-            <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Produto" name="txProdutoConsulta" value="Buscar produto"/>
+
+                <h2 class="subtitle"> Buscas de produtos</h2>
+                <form action="{{url('/produto')}}" method="get">
+                    <div class="espaco">
+                    <input  class="form-control" type="text" placeholder="Produto" name="txProdutoConsulta" value="Buscar produto"/>
+                    </div>
+                    <div class="espaco">
+                    <input class="btn btn-danger" type="submit" value="Buscar"/>
+                    </div>
+                </form>
+
             </div>
 
-            <div class="espaco">
-            <input class="btn btn-danger" type="submit" value="Buscar"/>
+            <div>
+
+                <h2 class="subtitle"> Buscas de valores</h2>
+                <form action="{{url('/produto')}}" method="get">
+                <div class="espaco">
+                <input  class="form-control" type="text" placeholder="Produto" name="txProdutoValorI" value="Valor Inicial"/>
+                </div>
+                <div class="espaco">
+                <input  class="form-control" type="text" placeholder="Produto" name="txProdutoValorF" value="Valor Final"/>
+                </div>
+                <div class="espaco">
+                <input class="btn btn-danger" type="submit" value="Buscar"/>
+                </div>
+                </form>
+
             </div>
-            </form>
-            
-            </div>
-        
+
             @foreach($produto as $p)
             <div class="space">
             <h1> IdProduto: {{$p->idProduto}} </h1>
@@ -46,6 +63,12 @@
             <a href="/produtoEditar/{{$p->idProduto}}/editar" class="link"><span class="material-symbols-outlined">edit</span></a>
             </div>
             @endforeach
+            @if(count($produto) == 0 $searchnome)
+                <p>Não foi possível encontrar nenhum produto com {{ $searchnome }}</p>
+            @else
+                <p>Não há produtos cadastrados</p>
+            @endif
+
         
     </section>
     @endsection
