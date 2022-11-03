@@ -18,22 +18,17 @@ class ProdutoController extends Controller
         $searchnome = request('txProdutoConsulta');
         $searchvalori = request('txProdutoValorI');
         $searchvalorf = request('txProdutoValorF');
-
-        if($searchvalori && $searchvalorf) {
-            $produto = ProdutoModel::where([$searchvalori.'<'.'valor'.'<'.$searchvalorf])->get();
-        }
-        else{
-            $produto = ProdutoModel::all();
-         }
-
         if($searchnome) {
-            $produto = ProdutoModel::where(['produto', 'like', '%'.$searchnome.'%'])->get();
+            $produto = ProdutoModel::where('produto',$searchnome)->get();
+        }
+        else if($searchvalori && $searchvalorf){
+            $produto = ProdutoModel::where('valor','>',$searchvalori)->get();
+            $produto = ProdutoModel::where('valor','<',$searchvalorf)->get();
         }
         else{
             $produto = ProdutoModel::all();
          }
-        return view('produto',['produto' => $produto, 'txProdutoConsulta' => $searchnome, 
-        'txProdutoValorI' => $searchvalori, 'txProdutoValorF' => $searchvalorf,]);
+        return view('produto',['produto' => $produto, 'txProdutoConsulta' => $searchnome, 'txProdutoValorI' => $searchvalori, 'txProdutoValorF' => $searchvalorf]);
     }
 
     /**

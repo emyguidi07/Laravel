@@ -41,10 +41,10 @@
                 <h2 class="subtitle"> Buscas de valores</h2>
                 <form action="{{url('/produto')}}" method="get">
                 <div class="espaco">
-                <input  class="form-control" type="text" placeholder="Produto" name="txProdutoValorI" value="Valor Inicial"/>
+                <input  class="form-control" type="text" placeholder="INICIAL" name="txProdutoValorI" value="Valor Inicial"/>
                 </div>
                 <div class="espaco">
-                <input  class="form-control" type="text" placeholder="Produto" name="txProdutoValorF" value="Valor Final"/>
+                <input  class="form-control" type="text" placeholder="FINAL" name="txProdutoValorF" value="Valor Final"/>
                 </div>
                 <div class="espaco">
                 <input class="btn btn-danger" type="submit" value="Buscar"/>
@@ -63,9 +63,13 @@
             <a href="/produtoEditar/{{$p->idProduto}}/editar" class="link"><span class="material-symbols-outlined">edit</span></a>
             </div>
             @endforeach
-            @if(count($produto) == 0 $searchnome)
-                <p>Não foi possível encontrar nenhum produto com {{ $searchnome }}</p>
-            @else
+
+
+            @if(count($produto) == 0 && $searchnome)
+                <p>Não foi possível encontrar nenhum produto por {{ $searchnome }}  </p>
+            @elseif(count($produto) == 0 && $searchvalori && $searchvalorf)
+                 <p>Não foi possível encontrar nenhum valor entre {{ $searchvalori }} e {{ $searchvalorf }} </p>
+            @elseif(count($produto) == 0)
                 <p>Não há produtos cadastrados</p>
             @endif
 
