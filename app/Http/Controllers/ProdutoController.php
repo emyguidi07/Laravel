@@ -19,7 +19,7 @@ class ProdutoController extends Controller
         $searchvalori = request('txProdutoValorI');
         $searchvalorf = request('txProdutoValorF');
         if($searchnome) {
-            $produto = ProdutoModel::where('produto',$searchnome)->get();
+            $produto = ProdutoModel::where([['produto', 'like', '%'.$searchnome.'%']])->get();
         }
         else if($searchvalori && $searchvalorf){
             $produto = ProdutoModel::where('valor','>',$searchvalori)->get();
