@@ -46,6 +46,8 @@ Route::get('/contatoadm', function () {
 //consultas
 Route::get('/contato','ContatoController@index');
 Route::get('/categoria','CategoriaController@index');
+//para consultas de nome e produto
+Route::post('/welcome/pesquisa', 'ProdutoController@show');
 Route::get('/pedido','PedidoController@index');
 Route::get('/produto','ProdutoController@index');
 Route::get('/cliente','ClienteController@index');
