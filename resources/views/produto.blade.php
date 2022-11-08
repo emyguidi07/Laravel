@@ -23,17 +23,54 @@
         </div>
 
             
+        <div>
+            
+            <div>
+                <h2 class="subtitle"> Buscas de produtos</h2>
+                <form action="{{url('/produto')}}" method="get">
+                    <div class="espaco">
+                    <input  class="form-control" type="text" placeholder="Produto" name="txProdutoConsulta" value="Buscar produto"/>
+                    </div>
+                    <div class="espaco">
+                    <input class="btn btn-danger" type="submit" value="Buscar"/>
+                    </div>
+                </form>
+
+            </div>
+            </form>
+
+            <div>
+                <h2 class="subtitle"> Buscas de valores</h2>
+                <form action="{{url('/produto')}}" method="get">
+                <div class="espaco">
+                <input  class="form-control" type="text" placeholder="Produto" name="txProdutoValorI" value="Valor Inicial"/>
+                </div>
+                <div class="espaco">
+                <input  class="form-control" type="text" placeholder="Produto" name="txProdutoValorF" value="Valor Final"/>
+                </div>
+                <div class="espaco">
+                <input class="btn btn-danger" type="submit" value="Buscar"/>
+                </div>
+                </form>
+
+            </div>
             @foreach($produto as $p)
             <div class="space">
-            <h1> Produto: {{$p->produto}} </h1>
+            <h1> IdProduto: {{$p->idProduto}} </h1>
             <p> IdCategoria: {{$p->idCategoria}} </p>
-            <p> IdProduto: {{$p->idProduto}} </p>
+            <p> Produto: {{$p->produto}} </p>
             <p> Valor: {{$p->valor}} </p>
             <a href="/produto/{{$p->idProduto}}" class="link"><span class="material-symbols-outlined">delete</span></a>
             <a href="/produtoEditar/{{$p->idProduto}}/editar" class="link"><span class="material-symbols-outlined">edit</span></a>
             </div>
             @endforeach
 
-        
+            @if(count($produto) == 0 && $searchnome)
+                <p>Não foi possível encontrar nenhum produto por {{ $searchnome }}  </p>
+            @elseif(count($produto) == 0 && $searchvalori && $searchvalorf)
+                 <p>Não foi possível encontrar nenhum valor entre {{ $searchvalori }} e {{ $searchvalorf }} </p>
+            @elseif(count($produto) == 0)
+                <p>Não há produtos cadastrados</p>
+            @endif
     </section>
     @endsection

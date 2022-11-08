@@ -15,8 +15,22 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produto = ProdutoModel::all();
-        return view('produto', compact('produto'));
+        $searchnome = request('txProdutoConsulta');
+        $searchvalori = request('txProdutoValorI');
+        $searchvalorf = request('txProdutoValorF');
+
+        if($searchnome) {
+            $produto = ProdutoModel::where([['produto', 'like', '%'.$searchnome.'%']])->get();
+        }
+        else if($searchvalori && $searchvalorf){
+            $produto = ProdutoModel::where('valor','>',$searchvalori)->get();
+            $produto = ProdutoModel::where('valor','<',$searchvalorf)->get();
+        }
+        else{
+            $produto = ProdutoModel::all();
+         }
+        return view('produto',['produto' => $produto, 'txProdutoConsulta' => $searchnome, 
+        'txProdutoValorI' => $searchvalori, 'txProdutoValorF' => $searchvalorf,]);
     }
 
     /**
@@ -53,37 +67,7 @@ class ProdutoController extends Controller
      */
     public function show(Request $request)
     {
-
-        $nomeProduto = $request->txProduto;
-
-        if (isset($request->valorMin))
-            $valorMin = $request->valorMin;
-        else 
-            $valorMin = 0;
-        
-        if (isset($request->valorMax))            
-            $valorMax = $request->valorMax;
-        else 
-            $valorMax = 0;    
-
-        
-        if ($valorMax > $valorMin) {
-            $produto = DB::table('tbProduto')->where('produto', 'like', '%'. $nomeProduto .'%')
-            ->whereBetween('valor', array($valorMin , $valorMax))
-            ->join('tbCategoria', 'tbProduto.idCategoria', '=', 'tbCategoria.idCategoria')
-            ->select('categoria', 'produto', 'valor')->get();
-        } elseif ($valorMin > 0) {
-            $produto = DB::table('tbProduto')->where('produto', 'like', '%'. $nomeProduto .'%')
-            ->where('valor','>=' , $valorMin)
-            ->join('tbCategoria', 'tbProduto.idCategoria', '=', 'tbCategoria.idCategoria')
-            ->select('categoria', 'produto', 'valor')->get();
-        } else {
-            $produto = DB::table('tbProduto')->where('produto', 'like', '%'. $nomeProduto .'%')
-            ->join('tbCategoria', 'tbProduto.idCategoria', '=', 'tbCategoria.idCategoria')
-            ->select('categoria', 'produto', 'valor')->get();
-        }
-
-        return view('welcome', compact('produto'));
+        //
     }
     public function edit($id)
     {
