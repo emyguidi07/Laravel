@@ -91,7 +91,28 @@ class ProdutoController extends Controller
         $produto->update(['valor'=>$request->txValor]);
         return redirect("/produto");
     }
+     //consultas por webservice
+     public function produtos(){
+        $produto = ProdutoModel::all();
+        return $produto;
+    }
 
+    public function produtoById($id){
+        $produto = ProdutoModel::where('idProduto','=',$id)->get();        
+        return $produto;        
+    }
+
+    //inserções por webservice
+    public function produtoSalvar(Request $request)
+    {
+        $produto = new ProdutoModel();
+
+        $produto -> produto = $request->input('produto');
+        $produto -> idCategoria = $request->input('idCategoria');
+        $produto -> valor = $request->input('valor');
+        
+        $produto -> save();
+    }
     /**
      * Remove the specified resource from storage.
      *
