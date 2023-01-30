@@ -67,7 +67,7 @@ idContato int PRIMARY key AUTO_INCREMENT,
     mensagem varchar(500)
 );
 
-insert into tbcontato values
+insert into tbcontato values(
 null,
     'Ana',
   'ana@gmail.com',
